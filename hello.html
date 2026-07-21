@@ -39,8 +39,11 @@
       line-height: 1.6;
       overflow-x: hidden;
       background-color: var(--color-bg);
-      background-image: repeating-conic-gradient(var(--color-bg-tex-a) 0% 25%, var(--color-bg-tex-b) 0% 50%);
-      background-size: 18px 18px;
+      background-image: url("https://i.pinimg.com/vwebp/736x/90/01/c0/9001c0423315f3d043fe5d6a4ac22506.webp");
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      background-repeat: no-repeat;
     }
 
     a {
@@ -239,7 +242,7 @@
     }
 
     .hero-subtitle {
-      color: var(--color-text-muted);
+      color: #ffffff;
       font-size: 1rem;
       max-width: 520px;
       margin-bottom: 30px;
@@ -402,6 +405,12 @@
       text-shadow: none;
     }
 
+    .product-group-note {
+      color: var(--color-text-muted);
+      font-size: 0.84rem;
+      margin-top: 16px;
+    }
+
     .product-grid {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
@@ -425,6 +434,25 @@
     .product-figure svg {
       width: 62%;
       height: 62%;
+    }
+
+    .product-figure.photo {
+      padding: 0;
+    }
+
+    .product-figure.photo img {
+      display: block;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+
+    .product-figure.photo.contain {
+      padding: 16px;
+    }
+
+    .product-figure.photo.contain img {
+      object-fit: contain;
     }
 
     .product-body {
@@ -615,7 +643,7 @@
   <header class="header">
     <nav class="nav container">
       <a href="#home" class="logo">
-        <span class="mascot-wrap"><svg class="block-icon"><use href="#mascot-creeper" /></svg></span>
+        <span class="mascot-wrap"><img src="images/steve-face.png" alt="마인크래프트 스티브" style="width:100%;height:100%;object-fit:cover;image-rendering:pixelated;" /></span>
         <span>
           <span class="logo-text">MINECRAFT</span>
           <span class="logo-sub">POP-UP STORE</span>
@@ -639,7 +667,7 @@
       <div class="hero-block b2"><svg class="block-icon"><use href="#pixel-cap" style="--block-color:#ffcf33" /></svg></div>
       <div class="hero-block b3"><svg class="block-icon"><use href="#mascot-creeper" /></svg></div>
       <div class="container hero-content">
-        <div class="hero-mascot"><svg class="block-icon"><use href="#mascot-creeper" /></svg></div>
+        <div class="hero-mascot"><img src="images/steve-face.png" alt="마인크래프트 스티브" style="width:100%;height:100%;object-fit:cover;image-rendering:pixelated;" /></div>
         <p class="eyebrow">MINECRAFT SUMMER POP-UP</p>
         <h1 class="hero-title">블록 세계에서 만나는<br />마인크래프트 <span class="accent">팝업스토어</span></h1>
         <p class="hero-subtitle">
@@ -663,7 +691,7 @@
         <div class="section-head">
           <p class="eyebrow">EVENT INFO</p>
           <h2 class="section-title">팝업스토어 안내</h2>
-          <p class="section-text">17일간 진행되는 마인크래프트 팝업스토어에서 다양한 굿즈를 직접 만나보세요.</p>
+          <p class="section-text" style="color: #ffffff;">17일간 진행되는 마인크래프트 팝업스토어에서 다양한 굿즈를 직접 만나보세요.</p>
         </div>
         <div class="info-grid">
           <div class="info-card pixel-panel">
@@ -693,39 +721,19 @@
         <div class="section-head">
           <p class="eyebrow">PRODUCTS</p>
           <h2 class="section-title">판매 상품</h2>
-          <p class="section-text">키링, 모자·의류, 미니피규어 라인업을 만나보세요.</p>
+          <p class="section-text" style="color: #ffffff;">키링, 의류, 무드등을 만나보세요.</p>
         </div>
 
         <div class="product-group">
-          <h3 class="product-group-title">마인크래프트 키링 <span class="count">3종</span></h3>
+          <h3 class="product-group-title">마인크래프트 키링 <span class="count">1종</span></h3>
           <div class="product-grid">
             <article class="product-card pixel-panel">
-              <div class="product-figure">
-                <svg class="block-icon"><use href="#pixel-keyring" style="--block-color:#5fbf3f" /></svg>
+              <div class="product-figure photo contain">
+                <img src="images/mini-keyring.png" alt="마인크래프트 미니키링" />
               </div>
               <div class="product-body">
-                <p class="product-name">그래스 블록 키링</p>
-                <p class="product-desc">마인크래프트를 상징하는 그래스 블록 디자인</p>
-                <span class="product-tag">매장 판매</span>
-              </div>
-            </article>
-            <article class="product-card pixel-panel">
-              <div class="product-figure">
-                <svg class="block-icon"><use href="#pixel-keyring" style="--block-color:#52e6d8" /></svg>
-              </div>
-              <div class="product-body">
-                <p class="product-name">다이아몬드 키링</p>
-                <p class="product-desc">반짝이는 다이아몬드 블록 컬러 키링</p>
-                <span class="product-tag">매장 판매</span>
-              </div>
-            </article>
-            <article class="product-card pixel-panel">
-              <div class="product-figure">
-                <svg class="block-icon"><use href="#pixel-keyring" style="--block-color:#3fae4a" /></svg>
-              </div>
-              <div class="product-body">
-                <p class="product-name">크리퍼 키링</p>
-                <p class="product-desc">크리퍼 얼굴이 새겨진 시그니처 키링</p>
+                <p class="product-name">마인크래프트 미니키링</p>
+                <p class="product-desc">마인크래프트 캐릭터를 담은 미니 키링</p>
                 <span class="product-tag">매장 판매</span>
               </div>
             </article>
@@ -733,71 +741,52 @@
         </div>
 
         <div class="product-group">
-          <h3 class="product-group-title">마인크래프트 모자 · 의류 <span class="count">3종</span></h3>
+          <h3 class="product-group-title">마인크래프트 x 유니클로 UT: 너만의 스타일을 만들어봐!</h3>
           <div class="product-grid">
             <article class="product-card pixel-panel">
-              <div class="product-figure">
-                <svg class="block-icon"><use href="#pixel-cap" style="--block-color:#5fbf3f" /></svg>
+              <div class="product-figure photo contain">
+                <img src="images/uniqlo-cube-type.png" alt="큐브 타입 마인크래프트 그래픽 반팔" />
               </div>
               <div class="product-body">
-                <p class="product-name">크리퍼 캡모자</p>
-                <p class="product-desc">크리퍼 패치가 달린 그린 캡모자</p>
+                <p class="product-name">큐브 타입 마인크래프트 그래픽 반팔</p>
+                <p class="product-desc">마인크래프트 큐브 그래픽이 담긴 반팔 티셔츠</p>
                 <span class="product-tag">매장 판매</span>
               </div>
             </article>
             <article class="product-card pixel-panel">
-              <div class="product-figure">
-                <svg class="block-icon"><use href="#pixel-cap" style="--block-color:#ffcf33" /></svg>
+              <div class="product-figure photo contain">
+                <img src="images/uniqlo-time-to-mine.png" alt="잇츠 타임 투 마인! 그래픽 반팔" />
               </div>
               <div class="product-body">
-                <p class="product-name">픽셀 그래픽 티셔츠</p>
-                <p class="product-desc">도트 그래픽이 프린트된 반팔 티셔츠</p>
-                <span class="product-tag">매장 판매</span>
-              </div>
-            </article>
-            <article class="product-card pixel-panel">
-              <div class="product-figure">
-                <svg class="block-icon"><use href="#pixel-cap" style="--block-color:#4a4a52" /></svg>
-              </div>
-              <div class="product-body">
-                <p class="product-name">엔더맨 후드집업</p>
-                <p class="product-desc">다크 컬러의 엔더맨 컨셉 후드집업</p>
+                <p class="product-name">잇츠 타임 투 마인! 그래픽 반팔</p>
+                <p class="product-desc">위트있는 그래픽 문구가 돋보이는 반팔 티셔츠</p>
                 <span class="product-tag">매장 판매</span>
               </div>
             </article>
           </div>
+          <p class="product-group-note">*자세한건 유니클로 홈페이지 참조.</p>
         </div>
 
         <div class="product-group">
-          <h3 class="product-group-title">마인크래프트 미니피규어 <span class="count">3종</span></h3>
+          <h3 class="product-group-title">마인크래프트 무드등 <span class="count">2종</span></h3>
           <div class="product-grid">
             <article class="product-card pixel-panel">
-              <div class="product-figure">
-                <svg class="block-icon"><use href="#pixel-figure" style="--block-color:#52a8e6" /></svg>
+              <div class="product-figure photo">
+                <img src="images/torch.png" alt="마인크래프트 횃불" />
               </div>
               <div class="product-body">
-                <p class="product-name">탐험가 미니피규어</p>
-                <p class="product-desc">모험을 떠나는 탐험가 캐릭터 피규어</p>
+                <p class="product-name">마인크래프트 횃불</p>
+                <p class="product-desc">은은한 불빛의 횃불 모양 무드등</p>
                 <span class="product-tag">매장 판매</span>
               </div>
             </article>
             <article class="product-card pixel-panel">
-              <div class="product-figure">
-                <svg class="block-icon"><use href="#pixel-figure" style="--block-color:#5fbf3f" /></svg>
+              <div class="product-figure photo">
+                <img src="images/lantern.png" alt="마인크래프트 랜턴" />
               </div>
               <div class="product-body">
-                <p class="product-name">크리퍼 미니피규어</p>
-                <p class="product-desc">폭신폭신 도트 질감의 크리퍼 피규어</p>
-                <span class="product-tag">매장 판매</span>
-              </div>
-            </article>
-            <article class="product-card pixel-panel">
-              <div class="product-figure">
-                <svg class="block-icon"><use href="#pixel-figure" style="--block-color:#4a4a52" /></svg>
-              </div>
-              <div class="product-body">
-                <p class="product-name">엔더맨 미니피규어</p>
-                <p class="product-desc">보랏빛 눈이 포인트인 엔더맨 피규어</p>
+                <p class="product-name">마인크래프트 랜턴</p>
+                <p class="product-desc">아늑한 분위기를 더하는 랜턴 모양 무드등</p>
                 <span class="product-tag">매장 판매</span>
               </div>
             </article>
@@ -831,7 +820,7 @@
             </p>
           </div>
           <div class="visit-mascot">
-            <svg class="block-icon"><use href="#mascot-creeper" /></svg>
+            <img src="images/steve-face.png" alt="마인크래프트 스티브" style="width:100%;height:100%;object-fit:cover;image-rendering:pixelated;" />
           </div>
         </div>
       </div>
