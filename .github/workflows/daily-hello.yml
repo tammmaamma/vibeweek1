@@ -1,0 +1,41 @@
+name: Daily Hello
+
+on:
+  schedule:
+    # 매일 한국시간(KST, UTC+9) 09:00 = UTC 00:00
+    - cron: '0 0 * * *'
+  workflow_dispatch:
+
+permissions:
+  contents: write
+
+jobs:
+  update-quote:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Pick random quote and update README
+        run: |
+          set -e
+          QUOTE=$(shuf -n 1 quotes.txt)
+          awk -v q="$QUOTE" '
+            /<!-- QUOTE_START -->/ {print; print q; skip=1; next}
+            /<!-- QUOTE_END -->/ {skip=0}
+            skip {next}
+            {print}
+          ' README.md > README.md.tmp
+          mv README.md.tmp README.md
+
+      - name: Commit and push
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add README.md
+          if git diff --cached --quiet; then
+            echo "변경 사항 없음, 커밋 생략"
+          else
+            git commit -m "chore: 오늘의 한마디 갱신 ($(date -u +'%Y-%m-%d'))"
+            git push
+          fi
